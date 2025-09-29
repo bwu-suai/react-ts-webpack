@@ -1,0 +1,17 @@
+// tsconfig-for-webpack-config.json
+{
+  "compilerOptions": {
+    "module": "CommonJS", // Webpack 支持 CommonJS 模块
+    "moduleResolution": "Node", // 按 Node 规则解析模块
+    "target": "ES5", // 兼容更多环境
+    "esModuleInterop": true, // 解决 CommonJS 和 ES 模块兼容问题
+    "allowSyntheticDefaultImports": true, // 允许默认导入无默认导出的模块
+    "resolveJsonModule": true, // 支持导入 JSON 文件
+    "skipLibCheck": true // 跳过第三方类型声明检查（加快编译）
+  },
+  "include": [
+    "webpack.config.base.ts",
+    "webpack.config.dev.ts",
+    "webpack.config.prod.ts"
+  ] // 只编译 Webpack 配置文件
+}
