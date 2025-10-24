@@ -24,6 +24,8 @@ const Home: React.FC = () => {
     );
   };
 
+console.log("API 地址：", process.env.API_BASE_URL_H);
+
   // 3. 给 Form 组件指定泛型 <FormValues>，让 onFinish 自动推断类型
   return (
     <div>
@@ -50,6 +52,8 @@ const Home: React.FC = () => {
       </Form>
       <div>我是home</div>
       <div>{JSON.stringify(tryStore)}</div>
+
+      <Button onClick={() => {}}>点击查看环境</Button>
     </div>
   );
 };
