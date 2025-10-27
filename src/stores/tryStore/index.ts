@@ -1,25 +1,26 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface TryState {
-  name: string
-  age: number
+  name: string;
+  age: number;
+  homeStr?: string;
 }
 
 const initialState: TryState = {
-  name: '',
+  name: "",
   age: 0,
-}
+  homeStr: "",
+};
 
 const tryStore = createSlice({
-  name: 'tryStore',
+  name: "tryStore",
   initialState,
   reducers: {
-    setTryStore: (state, action: PayloadAction<TryState>) => {
-      state.name = action.payload.name
-      state.age = action.payload.age
+    setTryStore: (_, action: PayloadAction<TryState>) => {
+      return { ...action.payload };
     },
   },
-})
+});
 
-export const { setTryStore } = tryStore.actions
-export default tryStore.reducer
+export const { setTryStore } = tryStore.actions;
+export default tryStore.reducer;

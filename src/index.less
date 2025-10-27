@@ -1,0 +1,94 @@
+/* CSS Reset */
+
+/* Box-sizing reset to avoid box model issues */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default table spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default form styles */
+input, select, textarea, button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+
+/* Set default font family */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Reset headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Reset blockquotes */
+blockquote {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after {
+  content: '';
+}
+
+/* Remove default form input styles */
+input[type="checkbox"], input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Remove default fieldset border */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  display: none;
+}
+
+/* Reset images */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Remove default form label margins */
+label {
+  display: block;
+  margin-bottom: 0.5em;
+}

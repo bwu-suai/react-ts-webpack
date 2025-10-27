@@ -3,35 +3,37 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/stores/index";
 import { Button, Input, Form, Select } from "antd";
 import { setTryStore } from "@/stores/tryStore";
+import { useNavigate } from "react-router";
+import styles from "./home.less";
 
 interface FormValues {
   nameItem: string; // Input 的值通常是 string
   selectItem: number; // Select 的 value 是 string（对应 options 的 value 类型）
+  hahaha: string;
 }
 
 const Home: React.FC = () => {
   const tryStore = useSelector((store: RootState) => store.tryStore);
   const dispatch = useDispatch();
 
-  // 2. 接收 FormValues 类型的参数（自动获得类型提示）
+  const navigate = useNavigate();
+
   const clickFun = (formData: FormValues) => {
-    console.log(formData.nameItem, formData.selectItem);
     dispatch(
       setTryStore({
         name: formData.nameItem,
-        age: formData.selectItem, // 这里根据实际业务调整，示例仅为演示
+        age: formData.selectItem,
+        homeStr: formData.hahaha,
       })
     );
   };
 
-console.log("API 地址：", process.env.API_BASE_URL_H);
-
   // 3. 给 Form 组件指定泛型 <FormValues>，让 onFinish 自动推断类型
   return (
-    <div>
+    <div className={styles["home-page-big-box"]}>
       <Form<FormValues> onFinish={clickFun}>
         <Form.Item name="nameItem">
-          <Input placeholder="输入"></Input>
+          <Input placeholder="输入" />
         </Form.Item>
         <Form.Item name="selectItem">
           <Select
@@ -53,7 +55,16 @@ console.log("API 地址：", process.env.API_BASE_URL_H);
       <div>我是home</div>
       <div>{JSON.stringify(tryStore)}</div>
 
-      <Button onClick={() => {}}>点击查看环境</Button>
+      <Button
+        onClick={() => {
+          console.log("API 地址：", process.env.API_BASE_URL_H);
+          navigate("/sort");
+        }}
+      >
+        点击查看环境
+      </Button>
+
+      <div className={styles["haaa"]}></div>
     </div>
   );
 };
