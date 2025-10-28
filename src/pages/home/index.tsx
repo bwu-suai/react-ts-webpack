@@ -12,7 +12,7 @@ interface FormValues {
   hahaha: string;
 }
 
-const Home: React.FC = () => {
+export default function Home() {
   const tryStore = useSelector((store: RootState) => store.tryStore);
   const dispatch = useDispatch();
 
@@ -67,6 +67,4 @@ const Home: React.FC = () => {
       <div className={styles["haaa"]}></div>
     </div>
   );
-};
-
-export default Home;
+}

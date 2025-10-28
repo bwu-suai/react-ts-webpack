@@ -1,11 +1,10 @@
 import React from "react";
-import { router } from "./router/index";
-import { RouterProvider } from "react-router";
+import AppRouter from "./router";
 
 const App: React.FC = () => {
   return (
     <div className="app-container">
-      <RouterProvider router={router} />
+      <AppRouter />
     </div>
   );
 };

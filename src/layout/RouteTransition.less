@@ -1,0 +1,31 @@
+.main-container {
+  height: 100vh;
+  background: rgb(248, 248, 247);
+  display: flex;
+  .main-container-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+    flex: 1;
+    .page-root {
+      position: relative;
+      flex: 1;
+      // overflow: auto;
+      overflow: hidden;
+      min-height: 0;
+      & > div:not(.not-entry-animation) {
+        opacity: 0;
+        transform: translateX(20px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
