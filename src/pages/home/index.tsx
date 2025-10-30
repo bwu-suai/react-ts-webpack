@@ -19,6 +19,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const clickFun = (formData: FormValues) => {
+    console.log("API 地址：", process.env.API_BASE_URL_H);
     dispatch(
       setTryStore({
         name: formData.nameItem,
@@ -38,10 +39,10 @@ export default function Home() {
         <Form.Item name="selectItem">
           <Select
             options={[
-              { value: 17, label: "Jack" },
-              { value: 25, label: "Lucy" },
-              { value: 33, label: "yiminghe" },
-              { value: 42, label: "Disabled" },
+              { value: 17, label: "Jack年纪" },
+              { value: 25, label: "Lucy年纪" },
+              { value: 33, label: "yiminghe年纪" },
+              { value: 42, label: "Joker年纪" },
             ]}
           />
         </Form.Item>
@@ -56,12 +57,12 @@ export default function Home() {
       <div>{JSON.stringify(tryStore)}</div>
 
       <Button
+        style={{ margin: `20px 0` }}
         onClick={() => {
-          console.log("API 地址：", process.env.API_BASE_URL_H);
           navigate("/sort");
         }}
       >
-        点击查看环境
+        点击去sort页面
       </Button>
 
       <div className={styles["haaa"]}></div>
