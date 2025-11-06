@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/stores/index";
-import { Button, Input, Form, Select } from "antd";
+import { Button, Input, Form, Select, Modal } from "antd";
 import { setTryStore } from "@/stores/tryStore";
 import { useNavigate } from "react-router";
 import styles from "./home.less";
@@ -13,6 +13,7 @@ interface FormValues {
 }
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const tryStore = useSelector((store: RootState) => store.tryStore);
   const dispatch = useDispatch();
 
@@ -65,7 +66,41 @@ export default function Home() {
         点击去sort页面
       </Button>
 
+      <Button
+        style={{ margin: `20px 0` }}
+        onClick={() => {
+          setIsModalOpen(true);
+        }}
+      >
+        点击打开modal
+      </Button>
+
+      <Button
+        style={{ margin: `20px 0` }}
+        onClick={() => {
+          navigate("/listpage");
+        }}
+      >
+        去listpage页面
+      </Button>
+
       <div className={styles["haaa"]}></div>
+
+      <Modal
+        title="Basic Modal"
+        closable={{ "aria-label": "Custom Close Button" }}
+        open={isModalOpen}
+        onOk={() => {
+          setIsModalOpen(false);
+        }}
+        onCancel={() => {
+          setIsModalOpen(false);
+        }}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
     </div>
   );
 }

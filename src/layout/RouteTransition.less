@@ -2,6 +2,11 @@
   height: 100vh;
   background: rgb(248, 248, 247);
   display: flex;
+
+  .do-page-body-box {
+    font-size: 32px;
+  }
+
   .main-container-body {
     display: flex;
     flex-direction: column;
@@ -14,17 +19,26 @@
       // overflow: auto;
       overflow: hidden;
       min-height: 0;
-      & > div:not(.not-entry-animation) {
-        opacity: 0;
-        transform: translateX(20px);
+      & > div {
+        // opacity: 0;
+        // transform: translateX(20px);
         animation: fadeInUp 0.6s ease forwards;
       }
     }
 
     @keyframes fadeInUp {
-      to {
+      0% {
+        opacity: 0;
+        transform: translate(20px);
+      }
+
+      50% {
+        // transform: translateY(-10px);
+      }
+
+      100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translate(0);
       }
     }
   }
