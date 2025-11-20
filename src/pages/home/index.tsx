@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/stores/index";
-import { Button, Input, Form, Select, Modal } from "antd";
+import { Button, Input, Form, Select, Modal, Space } from "antd";
 import { setTryStore } from "@/stores/tryStore";
 import { useNavigate } from "react-router";
 import styles from "./home.less";
@@ -14,6 +14,7 @@ interface FormValues {
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAnimation, setIsAnimation] = useState(false);
   const tryStore = useSelector((store: RootState) => store.tryStore);
   const dispatch = useDispatch();
 
@@ -57,34 +58,51 @@ export default function Home() {
       <div>我是home</div>
       <div>{JSON.stringify(tryStore)}</div>
 
-      <Button
-        style={{ margin: `20px 0` }}
-        onClick={() => {
-          navigate("/sort");
-        }}
-      >
-        点击去sort页面
-      </Button>
+      <Space>
+        <Button
+          style={{ margin: `20px 0` }}
+          onClick={() => {
+            navigate("/sort");
+          }}
+        >
+          点击去sort页面
+        </Button>
 
-      <Button
-        style={{ margin: `20px 0` }}
-        onClick={() => {
-          setIsModalOpen(true);
-        }}
-      >
-        点击打开modal
-      </Button>
+        <Button
+          style={{ margin: `20px 0` }}
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+        >
+          点击打开modal
+        </Button>
 
-      <Button
-        style={{ margin: `20px 0` }}
-        onClick={() => {
-          navigate("/listpage");
-        }}
-      >
-        去listpage页面
-      </Button>
+        <Button
+          style={{ margin: `20px 0` }}
+          onClick={() => {
+            navigate("/listpage");
+          }}
+        >
+          去listpage页面
+        </Button>
 
-      <div className={styles["haaa"]}></div>
+        <Button
+          onClick={() => {
+            setIsAnimation(true);
+            let time = setTimeout(() => {
+              setIsAnimation(false);
+              clearTimeout(time);
+            }, 6000);
+          }}
+          type="primary"
+        >
+          点击开始动画
+        </Button>
+      </Space>
+
+      <div
+        className={`${styles["haaa"]} ${isAnimation ? styles["donghua"] : ""}`}
+      ></div>
 
       <Modal
         title="Basic Modal"

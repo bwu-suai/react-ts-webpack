@@ -3,10 +3,37 @@
   height: 100%;
   padding: 40px;
   box-sizing: border-box;
+}
 
-  .haaa {
-    width: 100px;
-    height: 100px;
-    background-color: red;
+.haaa {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.donghua {
+  animation: yidong 6s ease forwards;
+}
+
+
+@keyframes yidong {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(500px, 0);
+  }
+
+  50% {
+    transform: translate(500px, 200px);
+  }
+
+  75% {
+    transform: translate(0px, 200px);
+  }
+
+  100% {
+    transform: translate(0px, 0);
   }
 }

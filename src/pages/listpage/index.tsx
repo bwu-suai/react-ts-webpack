@@ -26,7 +26,13 @@ export default function ListPage() {
   // 自定义渲染每项的函数（参数类型为 MyItem，确保类型安全）
   const renderItem = (item: MyItem) => {
     return (
-      <div style={{ padding: "16px", borderBottom: "1px solid #f0f0f0" }}>
+      <div
+        style={{
+          padding: "16px",
+          borderBottom: "1px solid #ff0000ff",
+          background: "#eee",
+        }}
+      >
         <h4>ID: {item.id}</h4>
         <p>姓名: {item.name}</p>
         <p>年龄: {item.age}</p>
