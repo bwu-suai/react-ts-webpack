@@ -98,6 +98,14 @@ export default function Home() {
         >
           点击开始动画
         </Button>
+
+        <Button
+          onClick={() => {
+            navigate("/chatComponents");
+          }}
+        >
+          去chatComponents页面
+        </Button>
       </Space>
 
       <div
@@ -115,9 +123,7 @@ export default function Home() {
           setIsModalOpen(false);
         }}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <p>哈哈哈哈哈哈332211</p>
       </Modal>
     </div>
   );
