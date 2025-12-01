@@ -7,6 +7,7 @@ const Sort = lazy(() => import("@/pages/sort"));
 const ListPage = lazy(() => import("@/pages/listpage"));
 const NotFound = lazy(() => import("@/pages/notFound"));
 const ChatComponents = lazy(() => import("@/pages/chatComponents"));
+const PullRefresh = lazy(() => import("@/pages/pullRefresh"));
 
 const AppRouter: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter: React.FC = () => {
           <Route path="/sort" element={<Sort />}></Route>
           <Route path="/listpage" element={<ListPage />}></Route>
           <Route path="/chatComponents" element={<ChatComponents />}></Route>
+          <Route path="/pullRefresh" element={<PullRefresh />}></Route>
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

@@ -16,8 +16,8 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAnimation, setIsAnimation] = useState(false);
   const tryStore = useSelector((store: RootState) => store.tryStore);
+  
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const clickFun = (formData: FormValues) => {
@@ -100,11 +100,20 @@ export default function Home() {
         </Button>
 
         <Button
+          type="dashed"
           onClick={() => {
             navigate("/chatComponents");
           }}
         >
           去chatComponents页面
+        </Button>
+
+        <Button
+          onClick={() => {
+            navigate("/pullRefresh");
+          }}
+        >
+          去下拉刷新页面pullRefresh
         </Button>
       </Space>
 
