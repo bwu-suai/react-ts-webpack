@@ -7,8 +7,8 @@ import { useNavigate } from "react-router";
 import styles from "./home.less";
 
 interface FormValues {
-  nameItem: string; // Input 的值通常是 string
-  selectItem: number; // Select 的 value 是 string（对应 options 的 value 类型）
+  nameItem: string; 
+  selectItem: number; 
   hahaha: string;
 }
 
@@ -31,7 +31,6 @@ export default function Home() {
     );
   };
 
-  // 3. 给 Form 组件指定泛型 <FormValues>，让 onFinish 自动推断类型
   return (
     <div className={styles["home-page-big-box"]}>
       <Form<FormValues> onFinish={clickFun}>

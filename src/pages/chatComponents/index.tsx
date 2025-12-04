@@ -53,6 +53,17 @@ const chatComponents = () => {
     }, 2000);
   };
 
+  useEffect(() => {
+    let arrList: Message[] = Array.from({ length: 20 }, (_, i) => ({
+      id: `${Math.floor(10000000 + Math.random() * 90000000)}`,
+      content: `这是第一条消息${i + 1}`,
+      sender: i % 2 === 0 ? "other" : "me",
+      time: `${new Date().getTime()}`,
+    }));
+    setMessageList(arrList);
+    setScrollTop();
+  }, []);
+
   const setScrollTop = () =>
     setTimeout(() => {
       let eByView = document.getElementById("chat-content-view-id");

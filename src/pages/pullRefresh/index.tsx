@@ -15,12 +15,12 @@ const pullRefresh: React.FC = () => {
     Array.from({ length: 20 }, (_, i) => i)
   );
 
-  function renderText(pullStatus: PullStatus, percent: number) {
+  const renderText = (pullStatus: PullStatus, percent: number) => {
     switch (pullStatus) {
       case "pulling":
         return (
           <div>
-            {`下拉即可刷新 `}
+            下拉即可刷新
             <span style={{ color: "green" }}>{`${percent.toFixed(0)}%`}</span>
           </div>
         );
@@ -37,22 +37,22 @@ const pullRefresh: React.FC = () => {
       default:
         return "";
     }
-  }
+  };
 
-  function handleRefresh() {
+  const handleRefresh = () => {
     setRefreshing(true);
     setTimeout(() => {
       setRefreshing(false);
-    }, 1500);
-  }
+    }, 1000);
+  };
 
   return (
-    <div style={{ width: "100vw", height: "100vh", overflow: "auto" }}>
+    <div style={{ width: "100vw", height: "100vh", overflowY: "auto" }}>
       <PullToRefreshify
         refreshing={refreshing}
         onRefresh={handleRefresh}
         renderText={renderText}
-        completeDelay={0}
+        completeDelay={300}
       >
         <div className={styles["pull-item-big-view"]}>
           {dataList.map((item, i) => (
