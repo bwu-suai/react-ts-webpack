@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./index.less";
+import styles from "./index.m.less";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 

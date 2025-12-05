@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PullToRefreshify } from "react-pull-to-refreshify";
-import styles from "./index.less";
+import styles from "./index.m.less";
 
 type PullStatus =
   | "normal"

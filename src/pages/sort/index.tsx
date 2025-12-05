@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { Button, Modal } from "antd";
 import { useSelector } from "react-redux";
 import { RootState } from "@/stores/index";
-import styles from "./index.less";
+import styles from "./index.m.less";
 import IndustryTreeSelector from "@/components/industery";
 1;
 const Home: React.FC = () => {

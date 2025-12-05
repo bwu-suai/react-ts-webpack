@@ -4,11 +4,11 @@ import type { RootState } from "@/stores/index";
 import { Button, Input, Form, Select, Modal, Space } from "antd";
 import { setTryStore } from "@/stores/tryStore";
 import { useNavigate } from "react-router";
-import styles from "./home.less";
+import styles from "./index.m.less";
 
 interface FormValues {
-  nameItem: string; 
-  selectItem: number; 
+  nameItem: string;
+  selectItem: number;
   hahaha: string;
 }
 
@@ -16,7 +16,7 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAnimation, setIsAnimation] = useState(false);
   const tryStore = useSelector((store: RootState) => store.tryStore);
-  
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

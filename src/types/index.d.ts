@@ -4,7 +4,7 @@
 //   export default classes;
 // }
 
-declare module "*.less" {
+declare module "*.m.less" {
   // 声明 .less 文件导出一个键为类名、值为哈希后类名的对象
   const classes: { [key: string]: string };
   export default classes;
