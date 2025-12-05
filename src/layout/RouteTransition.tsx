@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router";
-import styles from "./RouteTransition.less";
+import styles from "./RouteTransition.m.less";
 
 // 根布局：包含动画容器、懒加载占位符和公共导航（可选）
 const RootLayout = () => {
